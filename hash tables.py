@@ -67,3 +67,9 @@ for i in range(0, 20):
             ax1.plot([v1[0]], [v1[1]], 'ro') # Plot a red point
 
 plt.show()
+
+
+P = np.array([[1, 1]])      # Single plane
+v1 = np.array([[1, 2]])     # Sample point 1
+v2 = np.array([[-1, 1]])    # Sample point 2
+v3 = np.array([[-2, -1]])   # Sample point 3
