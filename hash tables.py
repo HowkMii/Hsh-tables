@@ -77,3 +77,10 @@ v3 = np.array([[-2, -1]])   # Sample point 3
 np.dot(P, v1.T)
 np.dot(P, v2.T)
 np.dot(P, v3.T)
+
+
+def side_of_plane(P, v):
+    dotproduct = np.dot(P, v.T) # Get the dot product P * v'
+    sign_of_dot_product = np.sign(dotproduct) # The sign of the elements of the dotproduct matrix 
+    sign_of_dot_product_scalar = sign_of_dot_product.item() # The value of the first item
+    return sign_of_dot_product_scalar
