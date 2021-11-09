@@ -84,3 +84,8 @@ def side_of_plane(P, v):
     sign_of_dot_product = np.sign(dotproduct) # The sign of the elements of the dotproduct matrix 
     sign_of_dot_product_scalar = sign_of_dot_product.item() # The value of the first item
     return sign_of_dot_product_scalar
+
+
+side_of_plane(P, v1)
+side_of_plane(P, v2) # In which side is [-1, 1]
+side_of_plane(P, v3
