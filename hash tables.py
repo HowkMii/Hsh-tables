@@ -106,3 +106,12 @@ def hash_multi_plane(P_l, v):
         hash_value += 2**i * hash_i
     return hash_value
 
+
+
+np.random.seed(0)
+num_dimensions = 2 # is 300 in assignment
+num_planes = 3 # is 10 in assignment
+random_planes_matrix = np.random.normal(
+                       size=(num_planes,
+                             num_dimensions))
+print(random_planes_matrix)
