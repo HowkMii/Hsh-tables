@@ -140,3 +140,17 @@ def hash_multi_plane_matrix(P, v, num_planes):
 
 
 hash_multi_plane_matrix(random_planes_matrix, v, num_planes)
+
+
+
+
+word_embedding = {"I": np.array([1,0,1]),
+                   "love": np.array([-1,0,1]),
+                   "learning": np.array([1,0,1])
+                  }
+words_in_document = ['I', 'love', 'learning', 'not_a_word']
+document_embedding = np.array([0,0,0])
+for word in words_in_document:
+    document_embedding += word_embedding.get(word,0)
+    
+print(document_embedding)
