@@ -73,3 +73,7 @@ P = np.array([[1, 1]])      # Single plane
 v1 = np.array([[1, 2]])     # Sample point 1
 v2 = np.array([[-1, 1]])    # Sample point 2
 v3 = np.array([[-2, -1]])   # Sample point 3
+
+np.dot(P, v1.T)
+np.dot(P, v2.T)
+np.dot(P, v3.T)
