@@ -41,3 +41,29 @@ for i in range(0, 10):
             ax1.plot([v1[0]], [v1[1]], 'ro') # Plot red points
 
 plt.show()
+
+
+P = np.array([[1, 2]])  # Define a single plane. You may change the direction
+
+# Get a new plane perpendicular to P. We use a rotation matrix
+PT = np.dot([[0, 1], [-1, 0]], P.T).T  
+
+fig, ax1 = plt.subplots(figsize=(8, 8)) # Create a plot with custom size
+
+plot_vectors([P], colors=['b'], axes=[2, 2], ax=ax1) # Plot the plane P as a vector
+
+# Plot the plane P as a 2 vectors. 
+# We scale by 2 just to get the arrows outside the current box
+plot_vectors([PT * 4, PT * -4], colors=['k', 'k'], axes=[4, 4], ax=ax1)
+
+# Plot 20 random points. 
+for i in range(0, 20):
+        v1 = np.array(np.random.uniform(-4, 4, 2)) # Get a pair of random numbers between -4 and 4 
+        side_of_plane = np.sign(np.dot(P, v1.T)) # Get the sign of the dot product with P
+        # Color the points depending on the sign of the result of np.dot(P, point.T)
+        if side_of_plane == 1:
+            ax1.plot([v1[0]], [v1[1]], 'bo') # Plot a blue point
+        else:
+            ax1.plot([v1[0]], [v1[1]], 'ro') # Plot a red point
+
+plt.show()
