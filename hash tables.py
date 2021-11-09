@@ -88,4 +88,21 @@ def side_of_plane(P, v):
 
 side_of_plane(P, v1)
 side_of_plane(P, v2) # In which side is [-1, 1]
-side_of_plane(P, v3
+side_of_plane(P, v3)
+
+P1 = np.array([[1, 1]])   # First plane 2D
+P2 = np.array([[-1, 1]])  # Second plane 2D
+P3 = np.array([[-1, -1]]) # Third plane 2D
+P_l = [P1, P2, P3]  # List of arrays. It is the multi plane
+
+# Vector to search
+v = np.array([[2, 2]])
+
+def hash_multi_plane(P_l, v):
+    hash_value = 0
+    for i, P in enumerate(P_l):
+        sign = side_of_plane(P,v)
+        hash_i = 1 if sign >=0 else 0
+        hash_value += 2**i * hash_i
+    return hash_value
+
