@@ -18,3 +18,8 @@ def basic_hash_table(value_l, n_buckets):
         hash_table[hash_value].append(value) # Add the element to the corresponding bucket
     
     return hash_table
+
+
+value_l = [100, 10, 14, 17, 97] # Set of values to hash
+hash_table_example = basic_hash_table(value_l, n_buckets=10)
+pp.pprint(hash_table_example)
