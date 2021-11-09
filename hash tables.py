@@ -115,3 +115,28 @@ random_planes_matrix = np.random.normal(
                        size=(num_planes,
                              num_dimensions))
 print(random_planes_matrix)
+
+v = np.array([[2, 2]])
+# Side of the plane function. The result is a matrix
+def side_of_plane_matrix(P, v):
+    dotproduct = np.dot(P, v.T)
+    sign_of_dot_product = np.sign(dotproduct) # Get a boolean value telling if the value in the cell is positive or negative
+    return sign_of_dot_product
+
+
+sides_l = side_of_plane_matrix(
+            random_planes_matrix, v)
+sides_l
+
+def hash_multi_plane_matrix(P, v, num_planes):
+    sides_matrix = side_of_plane_matrix(P, v) # Get the side of planes for P and v
+    hash_value = 0
+    for i in range(num_planes):
+        sign = sides_matrix[i].item() # Get the value inside the matrix cell
+        hash_i = 1 if sign >=0 else 0
+        hash_value += 2**i * hash_i # sum 2^i * hash_i
+        
+    return hash_value
+
+
+hash_multi_plane_matrix(random_planes_matrix, v, num_planes)
